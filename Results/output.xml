@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230227 06:17:55.044" rpa="false" schemaversion="3">
+<suite id="s1" name="For" source="D:\Working zone\Trac nghiem vn\Python\Robot Framework Practice\TestProject\Tests\Loop\For.robot">
+<test id="s1-t1" name="Demo For loop handle" line="7">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_select_multiple</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230227 06:17:55.403" level="INFO">Opening browser 'Chrome' to base url 'https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_select_multiple'.</msg>
+<status status="PASS" starttime="20230227 06:17:55.403" endtime="20230227 06:18:12.601"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230227 06:18:12.602" endtime="20230227 06:18:12.742"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230227 06:18:15.746" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230227 06:18:12.743" endtime="20230227 06:18:15.746"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>id:iframeResult</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20230227 06:18:15.748" level="INFO">Selecting frame 'id:iframeResult'.</msg>
+<status status="PASS" starttime="20230227 06:18:15.747" endtime="20230227 06:18:15.815"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${list_label}</var>
+<arg>//select[@id='cars']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230227 06:18:15.833" level="INFO">${list_label} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="9d6eb4500543c348ee318a2b88576419", element="dff0ed00-98c4-4f1f-9a0d-6bafede33e45")&gt;]</msg>
+<status status="PASS" starttime="20230227 06:18:15.815" endtime="20230227 06:18:15.833"/>
+</kw>
+<for flavor="IN">
+<var>${elements}</var>
+<value>${list_label}</value>
+<iter>
+<var name="${elements}">[&lt;selenium.webdriver.remote.webelement.WebElement (session="9d6eb4500543c348ee318a2b88576419", element="dff0ed00-98c4-4f1f-9a0d-6bafede33e45")&gt;]</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${elements}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230227 06:18:15.869" level="INFO">${text} = Volvo
+Saab
+Opel
+Audi</msg>
+<status status="PASS" starttime="20230227 06:18:15.834" endtime="20230227 06:18:15.869"/>
+</kw>
+<status status="PASS" starttime="20230227 06:18:15.834" endtime="20230227 06:18:15.869"/>
+</iter>
+<status status="PASS" starttime="20230227 06:18:15.834" endtime="20230227 06:18:15.869"/>
+</for>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230227 06:18:15.870" endtime="20230227 06:18:18.254"/>
+</kw>
+<doc>For loop Tutorials</doc>
+<status status="PASS" starttime="20230227 06:17:55.403" endtime="20230227 06:18:18.254"/>
+</test>
+<status status="PASS" starttime="20230227 06:17:55.044" endtime="20230227 06:18:18.254"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="For">For</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
